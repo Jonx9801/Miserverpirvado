@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acceso Privado</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom right, #1b1b1b, #3a3a3a);
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .container {
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 30px;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+    }
+    input[type="password"] {
+      padding: 10px;
+      width: 200px;
+      border-radius: 8px;
+      border: none;
+      margin-top: 10px;
+    }
+    button {
+      padding: 10px 20px;
+      margin-top: 15px;
+      border: none;
+      border-radius: 8px;
+      background-color: #007bff;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    #serverSection {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div id="loginSection">
+      <h2>Introduce la contraseña</h2>
+      <input type="password" id="passwordInput" placeholder="Contraseña">
+      <br>
+      <button onclick="checkPassword()">Entrar</button>
+      <p id="errorMsg" style="color: red; display: none;">Contraseña incorrecta</p>
+    </div>
+
+    <div id="serverSection">
+      <h2>Acceso concedido ✅</h2>
+      <button onclick="window.location.href='https://www.roblox.com/share?code=88d8503509aad04db4e02e60ab0310c3&type=Server'">
+        Mi servidor privado
+      </button>
+    </div>
+  </div>
+
+  <script>
+    function checkPassword() {
+      const password = document.getElementById("passwordInput").value;
+      const loginSection = document.getElementById("loginSection");
+      const serverSection = document.getElementById("serverSection");
+      const errorMsg = document.getElementById("errorMsg");
+
+      if (password === "Moreira") {
+        loginSection.style.display = "none";
+        serverSection.style.display = "block";
+      } else {
+        errorMsg.style.display = "block";
+      }
+    }
+  </script>
+</body>
+</html>
